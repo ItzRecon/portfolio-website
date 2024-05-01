@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Array Lists</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/tutorials.css" />
+  <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+</head>
+
+<body>
+  </nav>
+  <section class="hero">
+    <a href="school.html" class="text-lg">Back</a>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-heading text-xl">Array Lists</h1>
+        <div class="paragraph text-sm">
+          An <b>ArrayList</b> is a resizable array. When you declare an ArrayList, you don't have to specify the size of
+          it. To use an ArrayList, you have to import <b>java.util.ArrayList</b> from the Java library. Here's an
+          example of declaring an ArrayList of integers. ArrayLists can be useful when you do not know how many elements
+          you are dealing with.
+          <br><br>
+          <pre>
+import java.util.ArrayList; 
+ 
+ArrayList<Integer>numbers = new ArrayList<Integer>();
+  
+</pre>
+          In the parenthesis, you can either leave it empty or put an integer. The integer represents the initial value
+          of the ArrayList. Each time the ArrayList reaches its capacity, it automatically creates a new array double
+          the capacity and copies all elements over, which can be take up a lot of memory.
+          <br><br>
+          To add elements to an ArrayList, we need to use the <b>add()</b> method. The add() method adds the element to
+          the end of ArrayList.
+          <br><br>
+          <pre>
+numbers.add(1); //adds integer 1 to end of arraylist
+numbers.add(2); //adds integer 2 to end of arraylist
+
+</pre>
+          The ArrayList is now {1, 2}
+          <br><br>
+          To access elements of the ArrayList, you can use the <b>get()</b> method.
+          <br><br>
+          <pre>
+int num1 = numbers.get(0); //gets integer 1
+int num2 = numbers.get(1); //gets integer 2
+
+</pre>
+          Like an array, the indexes start at 0.
+          <br><br>
+          You can also change elements of an ArrayList using the <b>set()</b> method.
+          <br><br>
+          <pre>
+numbers.set(0,3); //changes first number to 3
+
+</pre>
+          The ArrayList is now {3, 2}.
+          <br><br>
+          Like an array, you can use <b>for loops</b> and <b>foreach loops</b> to iterate through elements of an
+          ArrayList.
+          <br><br>
+          <pre>
+for (int i = 0; i < numbers.size(); i++) { 
+    System.out.println(numbers.get(i)); 
+} 
+
+</pre>
+          The <b>size()</b> method gives the number of elements, so we use this to determine when to stop. We use the
+          <b>get()</b> method and the index variable <b>i</b> to access each element and print it.
+          <br><br>
+          You can also use a foreach loop to directly access each element without using an index.
+          <br><br>
+          <pre>
+for(int i : numbers) {
+System.out.println(i); 
+} 
+
+</pre>
+          The variable <b>i</b> directly accesses each element of the ArrayList.
+        </div>
+        <h2 class="text-lg">Example</h2>
+        <div class="example text-sm">
+          An assignment where I used ArrayLists was when I was tasked to read multiple sentences from a file, shuffle
+          them, and create 6 new random paragraphs. Since I didn't know how many sentences there were, I used an
+          ArrayList. In addition, using an ArrayList was useful because it has a built in shuffle method called
+          <b>Collections.shuffle()</b> so I was able to shuffle the ArrayList very easily. Below is a snippet of code
+          when I stored the sentences from the file into the ArrayList and shuffled the ArrayList.
+          <br><br>
+          <pre>
+ArrayList<String> sentences = new ArrayList<String>(); //creating the public ArrayList to store the sentences
+   public void readFile() { //reading the sentences from the file into the ArrayList
+      try {
+         BufferedReader input = new BufferedReader(new FileReader("data.txt"));
+         String nextWord = input.readLine();
+         while((nextWord = input.readLine()) != null) {
+            sentences.add(nextWord);
+         }
+         input.close();
+      }
+      catch(IOException e) {
+      }
+      Collections.shuffle(sentences); //shuffling the sentences
+   }
+          </pre>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

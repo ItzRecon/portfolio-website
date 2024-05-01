@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recursion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/tutorials.css" />
+  <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+</head>
+
+<body>
+  </nav>
+  <section class="hero">
+    <a href="school.html" class="text-lg">Back</a>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-heading text-xl">Recursion</h1>
+        <div class="paragraph text-sm">
+          <b>Recursion</b> is when a method calls itself to break complicated problems into simpler ones.
+          <br><br>
+          In recursion, there is always a <b>base case</b> that stops the recursion. The recursive method always works
+          towards the base case. Recursion is useful for solving complex problems that are difficult to solve using
+          iteration.
+          <br><br>
+          For example, if we want to find the sum of all positive integers up to a number, we can use recursion.
+          <br><br>
+          <pre>
+public int sumR(int a) { //recursive method that finds the sum of all the positive integers up to the number 
+    if(a == 0) {
+        return 0;
+    }
+    return sumR(a-1) + a;
+}
+          </pre>
+          In the example above, the method keeps calling itself and adding the previous number until it reaches 0, which
+          stops the recursion.
+        </div>
+        <h2 class="text-lg">Example</h2>
+        <div class="text-sm">
+          I was tasked with an assignment that instructed me to remove all spaces in a string. This can be solved using
+          iteration, but the code will be much shorter and simpler using recursion. My plan was to use the trim() method
+          for each index of the string.
+          <br><br>
+          <pre>
+public String compact(String word) { //recursive method that removes all spaces in a string
+    if(word.length() == 1) {
+        return word;
+    }
+    return word.substring(0,1).trim() + compact(word.substring(1));
+}
+          </pre>
+          If I were to use a loop for this problem, it would take many more lines of code.
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
